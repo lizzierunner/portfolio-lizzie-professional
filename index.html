@@ -300,23 +300,18 @@
       animation: fadeInUp 1s ease-out 0.2s backwards;
     }
 
-    /* Easter egg - subtle nod to H2G2 */
-    .easter-egg {
+    /* Professional tagline */
+    .tagline {
       display: inline-block;
-      font-size: 0.875rem;
+      font-size: 1rem;
       color: #64748b;
-      font-family: 'Space Mono', monospace;
       margin-top: 0.5rem;
-      opacity: 0.7;
-      cursor: help;
       transition: all 0.3s ease;
       animation: fadeInUp 1s ease-out 0.4s backwards;
-    }
-
-    .easter-egg:hover {
-      opacity: 1;
-      color: #3b82f6;
-      transform: scale(1.05);
+      padding: 0.5rem 1rem;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 20px;
+      border: 1px solid rgba(59, 130, 246, 0.2);
     }
 
     .profile-container {
@@ -343,10 +338,6 @@
       transform: scale(1.05);
       border-color: #3b82f6;
       box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
-    }
-
-    .profile-img[src*="weezer"] {
-      cursor: pointer;
     }
 
     /* About Section */
@@ -382,45 +373,22 @@
       font-weight: 600;
     }
 
-    /* Subtle quote - one Douglas Adams reference */
-    .quote {
-      font-style: italic;
-      color: #94a3b8;
-      font-size: 0.95rem;
-      margin: 2rem 0 0;
-      padding: 1rem 1.5rem;
-      border-left: 3px solid rgba(59, 130, 246, 0.5);
-      background: rgba(15, 23, 42, 0.4);
-      border-radius: 0 8px 8px 0;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .quote::before {
-      content: '"';
-      position: absolute;
-      left: -10px;
-      top: -10px;
-      font-size: 4rem;
-      color: rgba(59, 130, 246, 0.2);
-      font-family: Georgia, serif;
-    }
-
-    .quote:hover {
-      border-left-color: #3b82f6;
-      background: rgba(15, 23, 42, 0.6);
-      transform: translateX(4px);
-    }
-
-    .status-note {
+    /* Professional highlight box */
+    .highlight-box {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
       margin-top: 1.5rem;
-      font-size: 0.95rem;
-      color: #94a3b8;
-      font-style: italic;
-      padding: 0.75rem 1rem;
-      background: rgba(34, 197, 94, 0.05);
-      border-left: 2px solid rgba(34, 197, 94, 0.3);
-      border-radius: 4px;
+      padding: 1rem 1.25rem;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+      border-radius: 12px;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+    
+    .highlight-icon {
+      font-size: 1.5rem;
     }
 
     /* Skills Section */
@@ -712,181 +680,6 @@
       border-color: #60a5fa;
     }
 
-    /* Subtle towel easter egg - bottom right corner */
-    .towel {
-      position: fixed;
-      right: 20px;
-      bottom: 80px;
-      width: 40px;
-      height: 50px;
-      background: #ef4444;
-      border-radius: 4px;
-      opacity: 0.7;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      animation: floatTowel 3s ease-in-out infinite;
-      /* Better touch target */
-      min-width: 44px;
-      min-height: 44px;
-      touch-action: manipulation;
-    }
-
-    @keyframes floatTowel {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .towel::before {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: 3px;
-      right: 3px;
-      height: 4px;
-      background: repeating-linear-gradient(
-        90deg,
-        #fca5a5 0px,
-        #fca5a5 2px,
-        #f87171 2px,
-        #f87171 4px
-      );
-      border-radius: 2px;
-    }
-
-    .towel:hover, .towel:active {
-      opacity: 1;
-      transform: scale(1.15) translateY(-5px);
-      box-shadow: 0 8px 20px rgba(239, 68, 68, 0.5);
-      animation: none;
-    }
-
-    /* The Answer - 42 badge */
-    .answer-42 {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 50px;
-      height: 50px;
-      background: rgba(34, 197, 94, 0.25);
-      border: 2px solid rgba(34, 197, 94, 0.5);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: #22c55e;
-      cursor: help;
-      font-family: 'Space Mono', monospace;
-      z-index: 100;
-      transition: all 0.3s ease;
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      animation: pulse42 3s ease-in-out infinite;
-      /* Better touch target */
-      min-width: 44px;
-      min-height: 44px;
-      touch-action: manipulation;
-    }
-
-    @keyframes pulse42 {
-      0%, 100% { 
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
-      }
-      50% { 
-        box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
-      }
-    }
-
-    .answer-42:hover, .answer-42:active {
-      transform: scale(1.2) rotate(360deg);
-      box-shadow: 0 0 30px rgba(34, 197, 94, 0.6);
-      background: rgba(34, 197, 94, 0.35);
-      animation: none;
-    }
-
-    /* The Hitchhiker's Guide book easter egg */
-    .guide-book {
-      position: fixed;
-      left: 20px;
-      bottom: 20px;
-      width: 55px;
-      height: 70px;
-      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-      border: 2px solid rgba(59, 130, 246, 0.6);
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      z-index: 100;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3),
-                  inset 2px 0 4px rgba(255, 255, 255, 0.2);
-      opacity: 0.85;
-      /* Better touch target */
-      min-width: 44px;
-      min-height: 44px;
-      touch-action: manipulation;
-    }
-
-    .guide-book::before {
-      content: "DON'T\APANIC";
-      white-space: pre;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #ffd700;
-      font-size: 0.65rem;
-      font-weight: 700;
-      font-family: 'Space Mono', monospace;
-      text-align: center;
-      line-height: 1.3;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    .guide-book:hover, .guide-book:active {
-      opacity: 1;
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6),
-                  inset 2px 0 6px rgba(255, 255, 255, 0.3);
-      border-color: #60a5fa;
-    }
-
-    /* Don't Panic Badge */
-    .dont-panic {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 0.5rem 1rem;
-      background: rgba(239, 68, 68, 0.1);
-      border: 2px solid rgba(239, 68, 68, 0.4);
-      border-radius: 8px;
-      color: #fca5a5;
-      font-family: 'Space Mono', monospace;
-      font-size: 0.875rem;
-      font-weight: 700;
-      z-index: 100;
-      opacity: 0.6;
-      transition: all 0.3s ease;
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      cursor: pointer;
-      /* Better touch target */
-      min-height: 44px;
-      display: flex;
-      align-items: center;
-      touch-action: manipulation;
-    }
-
-    .dont-panic:hover, .dont-panic:active {
-      opacity: 1;
-      transform: scale(1.05);
-      border-color: #ef4444;
-      color: #ef4444;
-      box-shadow: 0 4px 20px rgba(239, 68, 68, 0.3);
-    }
-
     footer {
       text-align: center;
       margin-top: 4rem;
@@ -901,18 +694,6 @@
     footer p {
       margin: 0.5rem 0;
       font-size: 0.9rem;
-    }
-
-    footer .whale-note {
-      font-size: 0.8rem;
-      margin-top: 0.5rem;
-      opacity: 0.7;
-      transition: all 0.3s ease;
-    }
-
-    footer .whale-note:hover {
-      opacity: 1;
-      transform: scale(1.05);
     }
 
     /* Tablet and mobile responsive */
@@ -982,38 +763,6 @@
         padding: 0.75rem 1.5rem;
         font-size: 0.95rem;
       }
-      
-      .towel {
-        right: 10px;
-        bottom: 70px;
-        width: 35px;
-        height: 45px;
-      }
-
-      .guide-book {
-        left: 10px;
-        bottom: 10px;
-        width: 45px;
-        height: 60px;
-      }
-
-      .guide-book::before {
-        font-size: 0.55rem;
-      }
-
-      .answer-42 {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1rem;
-        right: 10px;
-      }
-
-      .dont-panic {
-        top: 10px;
-        right: 10px;
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
-      }
     }
 
     @media (max-width: 480px) {
@@ -1037,10 +786,6 @@
       
       .about p {
         font-size: 0.95rem;
-      }
-
-      .quote {
-        font-size: 0.875rem;
       }
 
       .skills-title {
@@ -1067,31 +812,6 @@
       .projects-subtitle {
         font-size: 0.9rem;
       }
-      
-      .towel {
-        width: 30px;
-        height: 40px;
-      }
-
-      .guide-book {
-        width: 40px;
-        height: 55px;
-      }
-
-      .guide-book::before {
-        font-size: 0.5rem;
-      }
-
-      .answer-42 {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-      }
-
-      .dont-panic {
-        font-size: 0.7rem;
-        padding: 0.35rem 0.7rem;
-      }
     }
 
     @media (min-width: 1200px) {
@@ -1106,23 +826,11 @@
   <!-- Skip to main content for accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Skip to main content for accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <!-- DON'T PANIC Badge -->
-  <div class="dont-panic" onclick="dontPanicClick()" title="The Hitchhiker's Guide to the Galaxy">DON'T PANIC</div>
-
   <!-- Subtle starfield background -->
   <div class="stars" id="stars"></div>
 
   <!-- Magical stardust particles -->
   <div class="stardust-container" id="stardust"></div>
-
-  <!-- Constellation lines -->
-  <svg class="constellation" id="constellation">
-    <!-- Lines will be added by JavaScript -->
-  </svg>  <!-- Subtle starfield background -->
-  <div class="stars" id="stars"></div>
 
   <!-- Constellation lines -->
   <svg class="constellation" id="constellation">
@@ -1133,27 +841,26 @@
   <header>
     <h1>Lizzie Johnson</h1>
     <p class="subtitle">Developer & Designer | Problem Solver | Runner</p>
-    <span class="easter-egg" title="A person who knows where their towel is">🎒 Hoopy Frood | Mostly Harmless</span>
+    <span class="tagline">Crafting intuitive digital experiences that drive results</span>
   </header>
 
   <!-- Profile Images -->
   <div class="profile-container">
     <img src="lizzie.jpeg" alt="Portrait of Lizzie Johnson, web developer and designer" class="profile-img" />
-    <img src="weezer.jpeg" alt="Weezer, Lizzie's companion" class="profile-img" onclick="weezerClick()" title="Click for a fun fact about Weezer!" />
+    <img src="weezer.jpeg" alt="Weezer, Lizzie's companion" class="profile-img" />
   </div>
 
   <!-- About Section -->
   <main id="main-content">
   <div class="about">
-    <p>Runner, coder, and problem solver with a passion for building meaningful digital experiences. I create interactive applications that merge creativity with functionality—always with my towel nearby.</p>
+    <p>Passionate developer and designer dedicated to building meaningful digital experiences that make an impact. I combine technical expertise with creative problem-solving to deliver solutions that users love.</p>
     
-    <p>From building <strong>AI-powered beauty assistants</strong> to developing <strong>charity gaming experiences</strong>, I enjoy tackling challenges that make a difference. Currently exploring the intersection of design, development, and user experience while pondering the Ultimate Question.</p>
+    <p>From building <strong>AI-powered applications</strong> to developing <strong>interactive web experiences</strong>, I thrive on tackling challenges that matter. I'm passionate about clean code, intuitive design, and the intersection of technology and user experience.</p>
     
-    <div class="quote">"I may not have gone where I intended to go, but I think I have ended up where I needed to be." – Douglas Adams</div>
-    
-    <p class="status-note">
-      Status: Not panicking. Probability of success: Infinite (thanks to the Improbability Drive of determination).
-    </p>
+    <div class="highlight-box">
+      <span class="highlight-icon">💡</span>
+      <span>Currently seeking new opportunities to create innovative digital solutions</span>
+    </div>
   </div>
 
   <!-- Skills Section -->
@@ -1211,7 +918,7 @@
   <!-- Featured Projects Section -->
   <section class="projects-section">
     <h2 class="projects-title">Featured Projects</h2>
-    <p class="projects-subtitle">Building experiences that matter—one improbability at a time</p>
+    <p class="projects-subtitle">Delivering impactful solutions through innovative technology</p>
     
     <div class="projects-grid">
       
@@ -1348,15 +1055,10 @@
   </section>
   </main>
 
-  <!-- Subtle Easter Eggs -->
-  <div class="guide-book" onclick="guideClick()" title="The Hitchhiker's Guide to the Galaxy" role="button" aria-label="Hitchhiker's Guide book - click for quotes and facts"></div>
-  <div class="towel" onclick="towelClick()" title="Always know where your towel is" role="button" aria-label="Towel easter egg - click for a surprise"></div>
-  <div class="answer-42" onclick="showAnswer()" title="The Answer to Life, the Universe, and Everything" role="button" aria-label="The number 42 - click for a quote">42</div>
 
   <footer>
-    <p>© 2025 Lizzie Johnson • The Answer is 42</p>
-    <p>Built with curiosity, code, and a towel nearby</p>
-    <p class="whale-note">🐋 So long, and thanks for visiting</p>
+    <p>© 2025 Lizzie Johnson</p>
+    <p>Let's build something amazing together</p>
   </footer>
 
   <script>
@@ -1457,14 +1159,14 @@
       }, 3000);
     }
 
-    // Catch a shooting star (Stardust inspired!)
+    // Catch a shooting star
     function catchStar(star) {
       const stardustMessages = [
-        "✨ You caught a fallen star! Make a wish...",
-        "🌟 A star in human form... almost as magical as Yvaine!",
-        "⭐ The star dust shimmers in your hands...",
-        "💫 'You know when I said I knew little about love? That wasn't true...'",
-        "🌠 You've crossed the wall into magic!"
+        "✨ You caught a star! Make a wish...",
+        "🌟 Beautiful! The stars are on your side today.",
+        "⭐ Stardust shimmers in your hands...",
+        "💫 A moment of magic just for you!",
+        "🌠 Dreams do come true!"
       ];
       
       // Create sparkle effect
@@ -1473,7 +1175,6 @@
       }
       
       star.remove();
-      alert(stardustMessages[Math.floor(Math.random() * stardustMessages.length)]);
     }
 
     // Create sparkle particles when catching a star
@@ -1514,86 +1215,6 @@
           }, 17000);
         }
       }, 500);
-    }
-
-    // Don't Panic interaction
-    function dontPanicClick() {
-      const messages = [
-        "DON'T PANIC! Everything is under control... mostly.",
-        "Remember: Always know where your towel is!",
-        "Panic is just enthusiasm without the rhythm.",
-        "The Guide says: Keep calm and code on.",
-        "In case of emergency, consult the Guide (or Google).",
-      ];
-      alert(messages[Math.floor(Math.random() * messages.length)]);
-    }
-
-    // Towel easter egg interaction
-    function towelClick() {
-      alert("Don't Panic! You've found your towel. �");
-    }
-
-    // The Answer - 42 easter egg
-    function showAnswer() {
-      const answers = [
-        "42: The Answer to Life, the Universe, and Everything!",
-        "But what is the Question?",
-        "Deep Thought computed this for 7.5 million years!",
-      ];
-      alert(answers[Math.floor(Math.random() * answers.length)]);
-    }
-
-    // Weezer fun facts easter egg!
-    function weezerClick() {
-      const weezerFacts = [
-        "🐾 Weezer is the best coding companion - never complains about bugs!",
-        "🎮 Fun fact: Weezer's favorite debug method is the 'treat-driven development' approach!",
-        "⭐ Weezer believes every good project deserves a celebratory walk!",
-        "🧠 Weezer's coding philosophy: 'If at first you don't succeed, try again... or take a nap.'",
-        "💻 Weezer is fluent in three languages: Bark, Whine, and JavaScript!",
-        "🌟 Did you know? Weezer once caught a shooting star... it was a tennis ball.",
-        "🎯 Weezer's favorite algorithm: The Fetch() API!",
-        "🚀 Weezer thinks pair programming means two treats instead of one.",
-        "📚 Weezer's favorite book? 'The Hitchhiker's Guide to the Dog Park'",
-        "✨ Legend says Weezer can debug code just by staring at it... or maybe that's just a treat request."
-      ];
-      
-      const fact = weezerFacts[Math.floor(Math.random() * weezerFacts.length)];
-      alert(fact);
-      
-      // Add sparkle effect when clicked
-      const img = event.target;
-      const rect = img.getBoundingClientRect();
-      for (let i = 0; i < 8; i++) {
-        createSparkle(rect.left + rect.width/2, rect.top + rect.height/2);
-      }
-    }
-
-    // Hitchhiker's Guide quotes and facts easter egg
-    function guideClick() {
-      const guideFacts = [
-        "📖 Fun Fact: The Guide has sold more copies than 'Celestial Home Care Omnibus'!",
-        "🌌 The Guide Entry on Earth: 'Mostly Harmless'",
-        "🐋 'So long and thanks for all the fish!' - The dolphins, being smarter than us",
-        "☕ The Nutrimatic Drink Dispenser produced something almost, but not quite, entirely unlike tea.",
-        "🚀 'Space is big. Really big. You just won't believe how vastly hugely mindbogglingly big it is.'",
-        "🎯 'The ships hung in the sky in much the same way that bricks don't.'",
-        "📱 The Guide is definitive. Reality is frequently inaccurate.",
-        "🌟 'In the beginning the Universe was created. This has made a lot of people very angry.'",
-        "🔢 Deep Thought took 7.5 million years to calculate that the answer was 42.",
-        "👍 'Ford, you're turning into a penguin. Stop it.'",
-        "🎲 'Time is an illusion. Lunchtime doubly so.'",
-        "🌍 The Earth was actually a giant supercomputer designed to find the Ultimate Question.",
-        "🍵 Arthur never got his cup of tea, but he never stopped trying.",
-        "💡 'There is a theory which states that if ever anyone discovers exactly what the Universe is for...'",
-        "🎒 A towel is about the most massively useful thing an interstellar hitchhiker can have."
-      ];
-      
-      const fact = guideFacts[Math.floor(Math.random() * guideFacts.length)];
-      alert(fact);
-      
-      // Add shooting star effect
-      createShootingStar();
     }
 
     // Initialize
