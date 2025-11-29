@@ -262,6 +262,58 @@
       top: 0;
     }
 
+    /* Professional Navigation Menu */
+    .main-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+      z-index: 1000;
+      padding: 1rem 0;
+      opacity: 0;
+      transform: translateY(-100%);
+      transition: all 0.3s ease;
+    }
+
+    .main-nav.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0 2rem;
+    }
+
+    .nav-link {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: #3b82f6;
+      background: rgba(59, 130, 246, 0.1);
+    }
+
+    .nav-link.active {
+      color: #3b82f6;
+      background: rgba(59, 130, 246, 0.15);
+    }
+
     /* Header Section */
     header {
       position: relative;
@@ -424,6 +476,58 @@
       z-index: 10;
     }
 
+    /* Services Section */
+    .services-section {
+      max-width: 1200px;
+      margin: 0 auto 4rem;
+      padding: 3rem 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .service-card {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
+    }
+
+    .service-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 10px rgba(59, 130, 246, 0.5));
+    }
+
+    .service-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #f1f5f9;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+
     .skills-title {
       text-align: center;
       font-size: 2.5rem;
@@ -579,7 +683,24 @@
       font-size: 0.95rem;
       line-height: 1.6;
       color: #cbd5e1;
+      margin-bottom: 1rem;
+    }
+
+    .project-tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
       margin-bottom: 1.25rem;
+    }
+
+    .tech-badge {
+      background: rgba(139, 92, 246, 0.1);
+      color: #c4b5fd;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      border: 1px solid rgba(139, 92, 246, 0.3);
     }
 
     .project-link {
@@ -766,6 +887,16 @@
         background-attachment: scroll;
       }
 
+      .nav-container {
+        gap: 1rem;
+        padding: 0 1rem;
+      }
+
+      .nav-link {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.75rem;
+      }
+
       header {
         padding: 3rem 1.5rem 1.5rem;
       }
@@ -798,6 +929,15 @@
 
       .skills-section {
         padding: 2rem 1rem;
+      }
+
+      .services-section {
+        padding: 2rem 1rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
 
       .skills-title {
@@ -910,6 +1050,17 @@
   <!-- Skip to main content - Accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Professional Navigation Menu -->
+  <nav class="main-nav" id="mainNav">
+    <div class="nav-container">
+      <a href="#main-content" class="nav-link">About</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+  </nav>
+
   <!-- Subtle starfield background -->
   <div class="stars" id="stars"></div>
 
@@ -968,6 +1119,46 @@
       💼 Currently available for freelance projects and full-time opportunities
     </p>
   </div>
+
+  <!-- What I Do Section -->
+  <section class="services-section" id="services">
+    <h2 class="skills-title">What I Do</h2>
+    <p class="skills-subtitle">Services I offer to bring your ideas to life</p>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">💻</div>
+        <h3 class="service-title">Web Development</h3>
+        <p class="service-description">
+          Building responsive, interactive websites and web applications using modern HTML, CSS, and JavaScript.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3 class="service-title">AI Integration</h3>
+        <p class="service-description">
+          Implementing AI-powered chatbots, recommendation systems, and intelligent user experiences.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎨</div>
+        <h3 class="service-title">UX/UI Design</h3>
+        <p class="service-description">
+          Creating intuitive, beautiful interfaces with user research, wireframing, and prototyping.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3 class="service-title">Data Visualization</h3>
+        <p class="service-description">
+          Transforming complex data into clear, interactive visualizations and dashboards.
+        </p>
+      </div>
+    </div>
+  </section>
 
   <!-- Skills Section -->
   <section class="skills-section" id="skills">
@@ -1039,6 +1230,12 @@
           <p class="project-description">
             An endless runner game for charity: water. Navigate the wasteland, collect water drops, and deliver clean water to communities in need. Every mile counts.
           </p>
+          <div class="project-tech-stack">
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">HTML5 Canvas</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">Game Dev</span>
+          </div>
           <a href="https://lizzierunner.github.io/final-last-drop-runner/" target="_blank" rel="noopener" class="project-link">
             View Project →
           </a>
@@ -1056,6 +1253,12 @@
           <p class="project-description">
             AI-powered beauty advisor that helps users build personalized skincare routines. Features product recommendations, skin quizzes, and expertly curated templates.
           </p>
+          <div class="project-tech-stack">
+            <span class="tech-badge">AI/ML</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">API Integration</span>
+            <span class="tech-badge">UX Design</span>
+          </div>
           <a href="https://lizzierunner.github.io/final-routine-builder/" target="_blank" rel="noopener" class="project-link">
             View Project →
           </a>
@@ -1073,6 +1276,12 @@
           <p class="project-description">
             AI-powered chatbot providing personalized beauty recommendations for makeup, skincare, haircare, and fragrances. Your personal beauty expert available 24/7.
           </p>
+          <div class="project-tech-stack">
+            <span class="tech-badge">OpenAI</span>
+            <span class="tech-badge">Chatbot</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">API</span>
+          </div>
           <a href="https://lizzierunner.github.io/08-prj-loreal-chatbot/" target="_blank" rel="noopener" class="project-link">
             View Project →
           </a>
@@ -1090,6 +1299,11 @@
           <p class="project-description">
             Explore the universe through NASA's Astronomy Picture of the Day. Browse cosmic imagery, filter by galaxies, nebulas, and planets with space-themed music integration.
           </p>
+          <div class="project-tech-stack">
+            <span class="tech-badge">NASA API</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Responsive Design</span>
+          </div>
           <a href="https://lizzierunner.github.io/09-nasa-space-explorer-v2/" target="_blank" rel="noopener" class="project-link">
             View Project →
           </a>
@@ -1107,6 +1321,12 @@
           <p class="project-description">
             Event check-in system for Intel's Team Sustainability Summit. Features team leaderboards, real-time analytics, and attendee tracking with progress visualization.
           </p>
+          <div class="project-tech-stack">
+            <span class="tech-badge">Data Viz</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Real-time</span>
+            <span class="tech-badge">Analytics</span>
+          </div>
           <a href="https://lizzierunner.github.io/05-prj-intel-event-check-in/" target="_blank" rel="noopener" class="project-link">
             View Project →
           </a>
@@ -1124,6 +1344,11 @@
           <p class="project-description">
             Interactive timeline showcasing Intel's journey from founding in 1968 to 2020 sustainability milestones. Explores innovation, technology, and environmental commitment.
           </p>
+          <div class="project-tech-stack">
+            <span class="tech-badge">Timeline UI</span>
+            <span class="tech-badge">CSS Animations</span>
+            <span class="tech-badge">JavaScript</span>
+          </div>
           <a href="https://lizzierunner.github.io/02-prj-intel-sustainability/" target="_blank" rel="noopener" class="project-link">
             View Project →
           </a>
@@ -1144,14 +1369,14 @@
       <a href="mailto:lizziejohnson30@icloud.com" class="button" aria-label="Send me an email">
         📧 Get In Touch
       </a>
+      <a href="#" class="button" onclick="alert('Resume PDF coming soon! For now, please connect via LinkedIn or email.'); return false;" aria-label="Download my resume">
+        � Download Resume
+      </a>
       <a href="https://github.com/lizzierunner" target="_blank" rel="noopener noreferrer" class="button secondary" aria-label="Visit my GitHub profile">
-        💻 GitHub
+        � GitHub
       </a>
       <a href="https://linkedin.com/in/lizzie-johnson-160874381" target="_blank" rel="noopener noreferrer" class="button secondary" aria-label="Connect on LinkedIn">
         💼 LinkedIn
-      </a>
-      <a href="https://morning-mystery-lizziejohnson30.replit.app" target="_blank" rel="noopener noreferrer" class="button secondary" aria-label="Try my Mystery App">
-        🎯 Mystery App
       </a>
     </div>
     
@@ -1356,6 +1581,66 @@
     // Detect if device supports touch (mobile/tablet)
     const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
+    // Sticky Navigation on Scroll
+    const nav = document.getElementById('mainNav');
+    const navLinks = document.querySelectorAll('.nav-link');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      
+      // Show nav after scrolling down 300px
+      if (scrolled > 300) {
+        nav.classList.add('visible');
+      } else {
+        nav.classList.remove('visible');
+      }
+
+      // Update active link based on scroll position
+      const sections = document.querySelectorAll('section, main');
+      let currentSection = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrolled >= (sectionTop - 100)) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentSection}`) {
+          link.classList.add('active');
+        }
+      });
+
+      // Parallax stars
+      const stars = document.getElementById('stars');
+      if (stars) {
+        const parallaxAmount = isTouchDevice ? 0.1 : 0.3;
+        stars.style.transform = `translateY(${scrolled * parallaxAmount}px)`;
+      }
+
+      lastScroll = scrolled;
+    });
+
+    // Smooth scroll for navigation links
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          const offsetTop = targetElement.offsetTop - 80; // Account for nav height
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
     // Cursor trail effect (only on non-touch devices)
     if (!isTouchDevice) {
       document.addEventListener('mousemove', (e) => {
@@ -1372,16 +1657,6 @@
         }
       });
     }
-
-    // Add smooth parallax scrolling (lighter effect on mobile)
-    window.addEventListener('scroll', () => {
-      const scrolled = window.pageYOffset;
-      const stars = document.getElementById('stars');
-      if (stars) {
-        const parallaxAmount = isTouchDevice ? 0.1 : 0.3;
-        stars.style.transform = `translateY(${scrolled * parallaxAmount}px)`;
-      }
-    });
   </script>
 </body>
 </html>
